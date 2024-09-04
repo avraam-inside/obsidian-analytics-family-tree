@@ -1,0 +1,167 @@
+{
+    // #################################################################################################################
+    // # BLOCK 1: VSCODE ###############################################################################################
+    // #################################################################################################################
+    // @note workbench main
+    "workbench.colorTheme":            "Default Dark+",
+    "workbench.panel.defaultLocation": "right",
+    "workbench.sideBar.location":      "right",
+    // other common settings
+    "redhat.telemetry.enabled":        false,
+    "outline.showVariables":           false,
+    
+    
+    // #################################################################################################################
+    // @note workbench tree
+    "workbench.tree.indent":             25,
+    "workbench.tree.expandMode":         "doubleClick",
+    "workbench.tree.renderIndentGuides": "always",
+    "explorer.sortOrder":                "mixed", // "default",
+    "explorer.incrementalNaming":        "smart",
+    "explorer.confirmDragAndDrop":       false,
+
+    
+    // #################################################################################################################
+    // @note editor main
+    "editor.trimAutoWhitespace":   false,
+    "editor.minimap.enabled":      false,
+    "editor.scrollBeyondLastLine": false,
+    "editor.rulers":               [120],
+    "editor.language.brackets":    [],
+    "editor.indentSize":           4,
+    // https://stackoverflow.com/questions/33236399/visual-studio-code-disable-quote-wrapping-text-selection
+    "editor.autoSurround":        "never",
+    "editor.autoClosingQuotes":   "never",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingDelete":   "never",
+    "editor.autoClosingOvertype": "never",
+    // https://stackoverflow.com/questions/76436694/
+    // in-vs-code-1-79-python-docstrings-are-colored-like-comments-how-do-i-return-it
+    // F1 -> Developer: Inspect Editor Tokens and Scopes
+    "editor.tokenColorCustomizations": {"textMateRules": [{
+        "scope":    "string.quoted.docstring",
+        "settings": {"foreground": "#CE9178"}}]},
+    
+    
+    // #################################################################################################################
+    // @note editor font
+    "editor.fontLigatures": true,
+    "editor.fontFamily":    "Fira Code",
+    "editor.fontWeight":    "100",
+    "editor.fontSize":      13,
+    
+    
+    // #################################################################################################################
+    // @note editor for files
+    "json.maxItemsComputed": 15000,
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize":      4,
+        "editor.indentSize":   4,
+        "editor.autoIndent":   "keep",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.quickSuggestions": {
+            "other":    true,
+            "strings":  true,
+            "comments": false}},
+    
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize":      4,
+        "editor.indentSize":   4,
+        "editor.autoIndent":   "advanced",
+        "editor.quickSuggestions": {
+            "other":    true,
+            "strings":  true,
+            "comments": false}},
+            
+          
+    // #################################################################################################################
+    // @note files
+    "files.associations": {
+        "*.sql":  "sql",
+        "*.site": "r",
+        "*.env":  "properties",
+        "*.bats": "shellscript",
+        "*.ini":  "properties"},
+        
+    "search.exclude": {
+        "**/.git":          true,
+        "**/.python/cache": true,
+        "**/.python/venv":  true},
+        
+    "files.exclude": {
+        "**/.DS_Store": false,
+        "**/.git":      false,
+        "**/.hg":       false,
+        "**/.svn":      false,
+        "**/CVS":       false,
+        "**/Thumbs.db": false},
+    
+    
+    // #################################################################################################################
+    // @note terminal main
+    "terminal.integrated.tabs.showActions":         "always",
+    "terminal.integrated.tabs.showActiveTerminal":  "always",
+    "terminal.integrated.tabs.separator":           " - ",
+    "terminal.integrated.tabs.defaultIcon":         "more",
+    "terminal.integrated.tabs.enabled":             true,
+    "terminal.integrated.tabFocusMode":             false,
+    "terminal.integrated.useWslProfiles":           false,
+    "terminal.integrated.enableVisualBell":         true,
+    "terminal.integrated.localEchoEnabled":         "on",
+    "terminal.integrated.localEchoExcludePrograms": ["vim", "vi", "nano"],
+    
+        
+    // #################################################################################################################
+    // @note terminal linux
+    "terminal.integrated.automationProfile.linux": null,
+    // https://stackoverflow.com/questions/66670724/vscode-integrated-terminal-in-remote-ssh-ignores-etc-profile-d
+    "terminal.integrated.defaultProfile.linux":    "bash",
+    "terminal.integrated.profiles.linux": {
+        "JavaScript Debug Terminal": null,
+        "zsh":                       null,
+        "bash": {
+            "path": "bash",
+            "args": ["-l"],
+            "icon": "terminal-bash"}},
+            
+    "debug.openExplorerOnEnd": false,
+    "debug.openDebug":         "neverOpen",
+    
+    
+    
+    // #################################################################################################################
+    // # BLOCK 2: EXTENSIONS ###########################################################################################
+    // #################################################################################################################
+    // @note favorites
+    "favorites.sortDirection": "ASC",
+    
+    // @note inline-bookmarks
+    "inline-bookmarks.search.excludes": [
+        "**/.git/**",
+        "**/.python/**"],
+    "inline-bookmarks.exceptions.file.extensions.ignore": "csv",
+    "inline-bookmarks.view.showVisibleFilesOnly": true,
+    "inline-bookmarks.expert.custom.words.mapping": {
+        // "green":  ["function[\\s]{1}[a-zA-Z]{1}[a-zA-Z0-9-]+\\(.*\\)[\\s]+\\{"],
+        "purple": ["BLOCK[\\s][0-9]+:[\\s]"],
+        "blue":   ["@test[\\s]", "@note[\\s]"],
+        "red":    ["TODO:[\\s]"]},
+    
+    // @note todo-tree
+    // https://github.com/Gruntfuggly/todo-tree/issues/56
+    "todo-tree.filtering.excludeGlobs": [
+        "*.html",
+        "**/tests/bats/**",
+        "**/tests/bats_modules/**"],
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "foreground": "#ffa500",
+            "type":       "tag",
+            "icon":       "flame"}},
+    // disabling other tags
+    "todo-tree.general.tags": [
+        "TODO"
+    ]
+}
