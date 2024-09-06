@@ -7,8 +7,8 @@
 Возможные значения тут: [[script - analytics - properties]]*/
 //----------------------------------------------------------------------------------------------------------------------
 // Глобальная переменная: вкл/выкл автотесты (если выключить, то будет чуть быстрее код работать)
-// let bool_asserts_activator_flag = false
-let bool_asserts_activator_flag = true
+let bool_asserts_activator_flag = false
+// let bool_asserts_activator_flag = true
 
 // Чекинг времени отработки скрипта: старт
 const dttm_script_start = performance.now();
@@ -3804,9 +3804,6 @@ function frontendBuildTableOneLvl(tbl_input, str_colname, str_comment, callout_t
         for (const x_lvl of arr_lvls) {
             if(x_lvl == 1) {// Первую таблицу с прямыми линками прятать не надо
                 str_header += 
-                    `>\n` + 
-                    `><br>\n` + 
-                    `>\n` + 
                     `>\n` +
                     `> ` + dv.markdownTable(
                         [
@@ -4005,4 +4002,4 @@ dv.paragraph(
 //----------------------------------------------------------------------------------------------------------------------
 // Чекинг времени отработки скрипта: отчет
 const dttm_script_end = performance.now();
-print(`Time elapsed: ${normalizeMilliseconds(dttm_script_end - dttm_script_start)}`)
+print(`Time elapsed: **${normalizeMilliseconds(dttm_script_end - dttm_script_start)}**`)
